@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+  <body>
+    <section>
+        <div class="card ml-2 mr-2 text-center">
+            <div class="card-body">
+                <div class="text-center">
+                    <img class="user_profile_picture" style="height:150px; width:150px;" th:src="@{'/img/'+ ${userDetails.imageUrl}}" src="#" alt="Profile pic" >
+                    <h3 th:text="${userDetails.name}" class="mt-3"></h3>
+
+
+    <!--                Table-->
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#Id</th>
+                                <th scope="col"><span th:text="'SCMUSER'+${userDetails.id}"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Name</th>
+                                <td th:text="${userDetails.name}"></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td th:text="${userDetails.email}"></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Role</th>
+                                <td th:text="${userDetails.role}"></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Enabled</th>
+                                <td th:text="${userDetails.enabled}"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>About User</h2>
+                <div class="about">
+                    <span th:text="${userDetails.about}"></span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+  </body>
+</html>

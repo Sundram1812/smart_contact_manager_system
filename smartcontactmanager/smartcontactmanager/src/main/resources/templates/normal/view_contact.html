@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>User DashBoard</title>
+</head>
+    <body>
+        <section>
+            <h1>This is your Information</h1>
+            <h3> User Name :<span th:text="${user.name}"></span></h3>
+            <h3> User Name :<span th:text="${user.email}"></span></h3>
+            <h3> About :<span th:text="${user.about}"></span></h3>
+        </section>
+    </body>
+</html>
